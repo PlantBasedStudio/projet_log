@@ -1,0 +1,40 @@
+
+footer{
+    width: 100dvw;
+    background-color: black;
+    color: white;
+    position: absolute;
+    bottom: 0;
+}
+
+.formulaireLogin{
+    display: flex;
+    margin: 0 auto;
+    flex-direction: column;
+    width: 50%;
+    background-color: rgb(226, 226, 226);
+    border-radius: 10px;
+    padding: 10px;
+    align-items: center;
+    gap: 20px;
+}
+
+
+.erreur{
+    display: flex !important;
+    text-align: center !important;
+    justify-content: center !important;
+    align-items: center !important;
+    margin: 0 auto !important;
+    color: white !important;
+    background-color: rgb(255, 153, 153) !important;
+    border-radius: 10px !important;
+    width: 50% !important;
+}
+
+.align{
+    display: flex;
+    width: 30%;
+    justify-content: space-between;
+}
+
