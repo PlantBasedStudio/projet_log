@@ -27,9 +27,18 @@ $mdp = protect_montexte($mdp);
 
 $pass = password_hash($mdp, PASSWORD_DEFAULT);
 
-$sql = 'INSERT INTO users (login, mdp, role, isVerified) VALUES ('.$login.','.$pass.',?,?)';
+$sql = 'INSERT INTO users (login, mdp, roles, isVerified) VALUES (?,?,?,?)';
 
-if($stmt = mysqli_prepare($link, $sql)){
+if($stmt = mysqli_prepare($conn, $sql)){
     mysqli_stmt_bind_param($stmt, "sssi", $param_login, $param_mdp, $param_role, $param_verif);
+
+    $param_login = $login;
+    $param_mdp = $pass;
+    $param_role = "user";
+    $param_verif = false;
+
+    if(mysqli_stmt_execute($stmt)){
+        header('Location: ./index.php');
+    }
 }
 ?> 
