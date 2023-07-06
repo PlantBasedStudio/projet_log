@@ -1,11 +1,15 @@
 <?php 
+session_start();
 
+$_SESSION['erreur'] ='';
+$_SESSION['login'] ='';
+$_SESSION['roles']='';
 require './PHP/CRUD/security.php';
 
-if (isset($_POST['login']) && ($_POST['login'] != null) && !empty($_POST['login'])){
+if (isset($_POST['login']) && ($_POST['login'] != null) && !empty($_POST['login']) && (filter_var($_POST['login'], FILTER_VALIDATE_EMAIL))){
     $login = $_POST['login'];
 } else {
-    $_SESSION['erreur'] .= 'Veuillez entrez votre adresse mail <br>';
+    $_SESSION['erreur'] .= 'Veuillez entrez une adresse mail valide';
     header('Location: ./inscription.php');
     exit();
 }
@@ -24,21 +28,35 @@ require_once './PHP/CRUD/config.php';
 $login = protect_montexte($login);
 $mdp = protect_montexte($mdp);
 
+$sql = "SELECT * FROM users";
 
+//! bloc de protection pour ne pas pouvoir créer un compte sur une adresse déjà existante
+if($result = mysqli_query($conn, $sql)){
+    if(mysqli_num_rows($result) > 0){
+        while($row = mysqli_fetch_array($result)){
+            if(($login == $row['login'])){
+                $_SESSION['erreur'] .= 'Vous     avez déjà un compte avec cette adresse mail';
+                header('Location: ./inscription.php');
+                exit();
+            } 
+        }
+    }
+}
 $pass = password_hash($mdp, PASSWORD_DEFAULT);
 
 $sql = 'INSERT INTO users (login, mdp, roles, isVerified) VALUES (?,?,?,?)';
 
 if($stmt = mysqli_prepare($conn, $sql)){
     mysqli_stmt_bind_param($stmt, "sssi", $param_login, $param_mdp, $param_role, $param_verif);
-
+    $_SESSION['login'] = $login;
     $param_login = $login;
     $param_mdp = $pass;
     $param_role = "user";
     $param_verif = false;
 
     if(mysqli_stmt_execute($stmt)){
-        header('Location: ./index.php');
+        
+        header('Location: ./profil.php');
     }
 }
 ?> 

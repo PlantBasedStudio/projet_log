@@ -1,3 +1,24 @@
+<?php
+// session_start();
+
+if(isset($_SESSION['login']) && $_SESSION['login'] != null){
+  $username = '<a class="nav-link" href="./deconnexion.php">bonjour ' . $_SESSION['login'] . ' Cliquez ici pour vous déco</a>';
+  $profil = '<a class="nav-link" href="./profil.php">Profil</a>';
+} else {
+  $username = '<a class="nav-link" href="./login.php">connexion</a>';
+  $profil = '<a class="nav-link" href="./login.php">Profil</a>';
+}   
+
+if(isset($_SESSION['roles'])){
+  $role = $_SESSION['roles'];
+} else {
+  $role = "";
+}
+
+
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -23,14 +44,23 @@
           </a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="./login.php">Profil</a>
+        <?php echo $profil ?>
         </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#">Visites</a>
-        </li>
-        <li class="nav-item">
+        <?php if ($_SESSION['login'] == null) : ?>
+          <li class="nav-item">
           <a class="nav-link" href="./inscription.php">Inscription</a>
         </li>
+        <?php endif ; ?>
+        <?php if ($role == 'admin') : ?>
+          <li class="nav-item">
+          <a class="nav-link" href="./ADMIN/index_admin.php">admin</a>
+        </li>
+        <?php endif ; ?>
+        <li class="nav-item">
+          <?php echo $username  ?>
+        </li>
+        
+        
         
       </ul>
       <form class="d-flex">

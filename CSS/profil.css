@@ -1,0 +1,18 @@
+.profil{
+    display: flex !important;
+    margin: 0 auto !important;
+    text-align: center !important;
+    justify-content: center !important;
+    align-items: center !important;
+    width: 80% !important;
+    height: 50dvh;
+    border-radius: 10px !important;
+    background-color: rgb(53, 53, 53) !important;
+    color: white !important;
+    margin-top: 25dvh !important;
+    flex-direction: column !important;
+}
+
+h1{
+    color: white !important;
+}

@@ -1,6 +1,6 @@
 <?php
 session_start();
-
+$_SESSION['login'] ='';
 if (isset($_SESSION['erreur'])){
     $erreur = $_SESSION['erreur'];
 } else {
