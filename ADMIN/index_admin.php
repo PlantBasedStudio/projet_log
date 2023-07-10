@@ -2,13 +2,13 @@
 session_start();
 
 if(isset($_SESSION['roles'])){
-    $role = $_SESSION['roles']; 
+    $roles = $_SESSION['roles']; 
 } else {
-    $role = '';
+    $roles = '';
     
 }
 
-if($role != 'admin'){
+if($roles != 'admin' || $_SESSION['login'] == null){
     header('Location: ../index.php');   
 }
 
@@ -25,7 +25,7 @@ if($role != 'admin'){
 </head>
 <body>
     <h1>Partie Administrateur</h1>
-
+    <a href="./PRODUITS/index_produits.php" class="btn btn-secondary">Produits</a>
     <div class="wrapper">
         <div class="container-fluid">
             <div class="row">

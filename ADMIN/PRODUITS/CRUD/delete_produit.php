@@ -1,5 +1,5 @@
 <?php
-require '../PHP/CRUD/config.php';
+session_start();
 
 if(isset($_SESSION['roles'])){
     $roles = $_SESSION['roles']; 
@@ -9,13 +9,13 @@ if(isset($_SESSION['roles'])){
 }
 
 if($roles != 'admin' || $_SESSION['login'] == null){
-    header('Location: ../index.php');   
+    header('Location: ../index_produits.php');   
 }
 
-$id = $_GET['id'];
-if(isset($_POST['id']) && $_POST['id'] != null && !empty($_POST['id'])){
-    $sql = "DELETE FROM users WHERE id=?";
 
+if(isset($_POST['id']) && $_POST['id'] != null && !empty($_POST['id'])){
+    $sql = "DELETE FROM products WHERE id=?";
+    require '../../../PHP/CRUD/config.php';
     if($stmt = mysqli_prepare($conn, $sql)){
         mysqli_stmt_bind_param($stmt, "i", $param_id);
 
@@ -23,7 +23,7 @@ if(isset($_POST['id']) && $_POST['id'] != null && !empty($_POST['id'])){
 
         if(mysqli_stmt_execute($stmt)){
             mysqli_close($conn);
-            header('Location: ./index_admin.php');
+            header('Location: ../index_produits.php');
             exit();
         } else {
             echo "Erreur de suppression";
@@ -33,16 +33,14 @@ if(isset($_POST['id']) && $_POST['id'] != null && !empty($_POST['id'])){
     else {
         echo "La connexion à échouée";
         if(empty(trim($_GET['id']))) {
-            header('Location: ./index_admin.php');
+            header('Location: Location: ../index_produits.php');
             exit();
         }
     }
     
 }
 
-
 ?>
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -63,11 +61,11 @@ if(isset($_POST['id']) && $_POST['id'] != null && !empty($_POST['id'])){
         <div class="container-fluid">
             <div class="row">
                 <div class="col-md-12">
-                    <h2 class="mt-5 mb-3">Suppression d'un utilisateur</h2>
+                    <h2 class="mt-5 mb-3">Suppression d'un Produit</h2>
                     <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post">
                         <div class="alert alert-danger">
                             <input type="hidden" name="id" value="<?php echo trim($_GET["id"]); ?>"/>
-                            <p>Etes vous sûre de vouloir supprimer cette utilisateur ?</p>
+                            <p>Etes vous sûre de vouloir supprimer ce produit ?</p>
                             <p>
                                 <input type="submit" value="Yes" class="btn btn-danger">
                                 <a href="./index_admin.php" class="btn btn-secondary">No</a>

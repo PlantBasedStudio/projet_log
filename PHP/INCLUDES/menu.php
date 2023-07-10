@@ -51,7 +51,7 @@ if(isset($_SESSION['roles'])){
           <a class="nav-link" href="./inscription.php">Inscription</a>
         </li>
         <?php endif ; ?>
-        <?php if ($role == 'admin') : ?>
+        <?php if ($role == 'admin' && $_SESSION['login'] != null) : ?>
           <li class="nav-item">
           <a class="nav-link" href="./ADMIN/index_admin.php">admin</a>
         </li>
@@ -59,7 +59,10 @@ if(isset($_SESSION['roles'])){
         <li class="nav-item">
           <?php echo $username  ?>
         </li>
-        
+        <li class="nav-item">
+          <a class="nav-link" href="./produits.php">Produits
+          </a>
+        </li>
         
         
       </ul>
