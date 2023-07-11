@@ -1,5 +1,5 @@
 <?php
-require '../PHP/CRUD/config.php';
+require '../../PHP/CRUD/config.php';
 
 if(isset($_SESSION['roles'])){
     $roles = $_SESSION['roles']; 
@@ -9,7 +9,7 @@ if(isset($_SESSION['roles'])){
 }
 
 if($roles != 'admin' || $_SESSION['login'] == null){
-    header('Location: ../index.php');   
+    header('Location: ../../index.php');   
 }
 
 $id = $_GET['id'];

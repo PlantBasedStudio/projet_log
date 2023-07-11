@@ -8,7 +8,7 @@ if(isset($_SESSION['roles'])){
 }
 
 if($roles != 'admin' || $_SESSION['login'] == null){
-    header('Location: ../index_admin.php');   
+    header('Location: ../../index.php');   
 }
 ?>
 <!DOCTYPE html>
@@ -21,8 +21,8 @@ if($roles != 'admin' || $_SESSION['login'] == null){
     <title>index produits</title>
 </head>
 <body>
+    <?php include '../INCLUDES/menu_admin.php' ?>
     <h1>Partie Administrateur : Produits</h1>
-    <a href="../index_admin.php" class="btn btn-secondary">Utilisateurs</a>
     <a href="./CRUD/create_produit.php" class="btn btn-primary">Ajouter un produit</a>
     <div class="wrapper">
         <div class="container-fluid">

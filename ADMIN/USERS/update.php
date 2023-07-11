@@ -1,6 +1,6 @@
 <?php
 session_start();
-require '../PHP/CRUD/config.php';
+require '../../PHP/CRUD/config.php';
 
 $login = $roles = '';
 $login_err = $roles_err = '';
@@ -14,7 +14,7 @@ if(isset($_SESSION['roles'])){
 }
 
 if($roles != 'admin' || $_SESSION['login'] == null){
-    header('Location: ../index.php');   
+    header('Location: ../../index.php');   
 }
 
 if(isset($_POST['id']) && !empty($_POST['id'])){

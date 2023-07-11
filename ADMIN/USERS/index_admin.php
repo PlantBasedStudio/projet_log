@@ -9,7 +9,7 @@ if(isset($_SESSION['roles'])){
 }
 
 if($roles != 'admin' || $_SESSION['login'] == null){
-    header('Location: ../index.php');   
+    header('Location: ../../index.php');   
 }
 
 
@@ -24,6 +24,7 @@ if($roles != 'admin' || $_SESSION['login'] == null){
     <title>Accueil admin</title>
 </head>
 <body>
+<?php include '../INCLUDES/menu_admin.php' ?>
     <h1>Partie Administrateur</h1>
     <a href="./PRODUITS/index_produits.php" class="btn btn-secondary">Produits</a>
     <div class="wrapper">
@@ -31,7 +32,7 @@ if($roles != 'admin' || $_SESSION['login'] == null){
             <div class="row">
                 <div class="col-md-12">
                     <?php
-                        require '../PHP/CRUD/config.php';
+                        require '../../PHP/CRUD/config.php';
                         $sql = "SELECT * FROM users";
 
                         if($result = mysqli_query($conn, $sql)){

@@ -46,14 +46,15 @@ if(isset($_SESSION['roles'])){
         <li class="nav-item">
         <?php echo $profil ?>
         </li>
-        <?php if ($_SESSION['login'] == null) : ?>
+        <?php if (!isset($_SESSION['login']) || $_SESSION['login'] == null ) : ?>
+          <?php $_SESSION = ""; ?>
           <li class="nav-item">
           <a class="nav-link" href="./inscription.php">Inscription</a>
         </li>
         <?php endif ; ?>
         <?php if ($role == 'admin' && $_SESSION['login'] != null) : ?>
           <li class="nav-item">
-          <a class="nav-link" href="./ADMIN/index_admin.php">admin</a>
+          <a class="nav-link" href="./ADMIN/USERS/index_admin.php">admin</a>
         </li>
         <?php endif ; ?>
         <li class="nav-item">
