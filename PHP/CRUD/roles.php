@@ -8,8 +8,8 @@ require_once './security.php';
 $login_ok = protect_montexte($_GET['login']);
 $mdp_ok = protect_montexte($_GET['mdp']);
 //? Ici on va créer un lien qu'il faudra copier coller dans la barre de navigation pour créer un admin. Attention à bien changer les valeurs du login et du mdp pour correspondre à un utilisateur existant
-//! http://localhost/Projets/projet_log/PHP/CRUD/roles.php?login=damien@gmail.com&mdp=azerty02
-if($mdp_ok == "azerty02"){
+//! http://localhost/Projets/projet_log/PHP/CRUD/roles.php?login=damien@gmail.com&mdp=H2gt5kl
+if($mdp_ok == "H2gt5kl"){
     $sql ="UPDATE users SET roles=? WHERE login=?";
 
     if($stmt = mysqli_prepare($conn, $sql)){

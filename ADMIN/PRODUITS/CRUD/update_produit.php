@@ -122,7 +122,7 @@ if(isset($_POST['ref'])){
             margin: 0 auto;
         }
     </style>
-    <title>Création d'un produit</title>
+    <title>Mise à jour d'un produit</title>
 </head>
 
 <body>

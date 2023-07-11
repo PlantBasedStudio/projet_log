@@ -1,11 +1,10 @@
 <?php
-// session_start();
 
 if(isset($_SESSION['login']) && $_SESSION['login'] != null){
   $username = '<a class="nav-link" href="./deconnexion.php">bonjour ' . $_SESSION['login'] . ' Cliquez ici pour vous déco</a>';
   $profil = '<a class="nav-link" href="./profil.php">Profil</a>';
 } else {
-  $username = '<a class="nav-link" href="./login.php">connexion</a>';
+  $username = '<a class="nav-link" href="./login.php">Connexion</a>';
   $profil = '<a class="nav-link" href="./login.php">Profil</a>';
 }   
 
@@ -13,6 +12,12 @@ if(isset($_SESSION['roles'])){
   $role = $_SESSION['roles'];
 } else {
   $role = "";
+}
+
+if (isset($_SESSION['erreur'])){
+  $erreur = $_SESSION['erreur'];
+} else {
+  $erreur ="";
 }
 
 

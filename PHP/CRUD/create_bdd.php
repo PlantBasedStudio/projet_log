@@ -1,6 +1,6 @@
 <?php
 require './config.php';
-$sql = "CREATE DATABASE if not exists users";
+$sql = "CREATE DATABASE if not exists testbdd";
 
 if(!mysqli_query($conn, $sql)){
     echo "Création KO";

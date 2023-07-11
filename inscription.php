@@ -1,11 +1,7 @@
 <?php
 session_start();
 
-if (isset($_SESSION['erreur'])){
-    $erreur = $_SESSION['erreur'];
-} else {
-    $erreur ="";
-}
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -13,7 +9,7 @@ if (isset($_SESSION['erreur'])){
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./CSS/style.css">
-    <title>Document</title>
+    <title>Inscription</title>
 </head>
 <body>
 <?php include './PHP/INCLUDES/menu.php' ?>
