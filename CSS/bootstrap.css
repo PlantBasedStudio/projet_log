@@ -132,6 +132,7 @@
   --bs-form-invalid-border-color: #d9534f;
 }
 
+
 [data-bs-theme=dark] {
   color-scheme: dark;
   --bs-body-color: #adb5bd;
@@ -142,7 +143,7 @@
   --bs-emphasis-color-rgb: 255, 255, 255;
   --bs-secondary-color: rgba(173, 181, 189, 0.75);
   --bs-secondary-color-rgb: 173, 181, 189;
-  --bs-secondary-bg: #343a40;
+  --bs-secondary-bg: #959595;
   --bs-secondary-bg-rgb: 52, 58, 64;
   --bs-tertiary-color: rgba(173, 181, 189, 0.5);
   --bs-tertiary-color-rgb: 173, 181, 189;
@@ -157,7 +158,7 @@
   --bs-light-text-emphasis: #f8f9fa;
   --bs-dark-text-emphasis: #eceeef;
   --bs-primary-bg-subtle: #050505;
-  --bs-secondary-bg-subtle: #333333;
+  --bs-secondary-bg-subtle: #b5b5b5;
   --bs-success-bg-subtle: #0f2617;
   --bs-info-bg-subtle: #061f29;
   --bs-warning-bg-subtle: #302310;

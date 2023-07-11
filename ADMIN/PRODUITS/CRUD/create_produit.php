@@ -120,11 +120,11 @@ if(isset($_POST['ref'])){
                     </label>
 
                     <label for="pu_ht"> prix HT
-                        <input class="form-control" type="float" name="pu_ht" id="pu_ht" placeholder="prix HT" maxlength="255" required>
+                        <input class="form-control" type="number" step="0.01" name="pu_ht" id="pu_ht" placeholder="prix HT" maxlength="255" required>
                     </label>
 
                     <label for="tva">TVA
-                        <input class="form-control" type="float" name="tva" id="tva" placeholder="tva" maxlength="255" required>
+                        <input class="form-control" type="number" step="0.01" name="tva" id="tva" placeholder="tva" maxlength="255" required>
                     </label>
 
                     <label for="designation"> Designation
@@ -140,7 +140,7 @@ if(isset($_POST['ref'])){
                     </label>
 
                     <label for="stock"> Stock
-                        <input class="form-control" type="int" name="stock" id="tva" placeholder="stock">
+                        <input class="form-control" type="number" name="stock" id="tva" placeholder="stock">
                     </label>
 
 

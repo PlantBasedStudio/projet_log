@@ -10,12 +10,9 @@ session_start();
 </head>
 <body>
     <?php include './PHP/INCLUDES/menu.php'; ?>
-    <?php
-    if (!empty($login)){
-        echo $login;
-        var_dump($login);die;
-    } 
-    ?>
+    
+    <h5>Bienvenue sur mon site incroyable</h5>
+    
     <?php include './PHP/INCLUDES/footer.php'; ?>
 </body>
 </html>

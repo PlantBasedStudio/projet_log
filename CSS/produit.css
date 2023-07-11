@@ -1,0 +1,33 @@
+
+.description{
+    
+    min-width: 48px;
+    max-height: 48px;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+.green{
+    color: green;
+}
+
+.red{
+    color:red;
+}
+
+
+.produit{
+    height: 600px;
+}
+
+.centerImg{
+    margin: 0 auto;
+    width: 50%;
+}
+
+.btnPanier{
+    position: absolute;
+    bottom: 20px;
+    width: 80%;
+    
+}

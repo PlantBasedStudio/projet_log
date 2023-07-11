@@ -3,7 +3,7 @@ footer{
     width: 100dvw;
     background-color: black;
     color: white;
-    position: absolute;
+    position: fixed;
     bottom: 0;
 }
 
@@ -37,5 +37,4 @@ footer{
     width: 30%;
     justify-content: space-between;
 }
-
 
