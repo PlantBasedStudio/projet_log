@@ -1,11 +1,5 @@
 
-footer{
-    width: 100dvw;
-    background-color: black;
-    color: white;
-    position: fixed;
-    bottom: 0;
-}
+
 
 .formulaireLogin{
     display: flex;

@@ -25,7 +25,7 @@ if($roles != 'admin' || $_SESSION['login'] == null){
 </head>
 <body>
 <?php include '../INCLUDES/menu_admin.php' ?>
-    <h1>Partie Administrateur</h1>
+    <h1 class="m-2">Partie Administrateur</h1>
     <a href="./PRODUITS/index_produits.php" class="btn btn-secondary">Produits</a>
     <div class="wrapper">
         <div class="container-fluid">
