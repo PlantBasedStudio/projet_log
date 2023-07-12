@@ -19,11 +19,16 @@
     <div class="collapse navbar-collapse" id="navbarColor01">
         <ul class="navbar-nav me-auto">
         <li class="nav-item">
-            <a class="nav-link active" href="../USERS/index_admin.php">Utilisateurs
+            <a class="nav-link" href="../USERS/index_admin.php">Utilisateurs
             </a>
         </li>
         <li class="nav-item">
-        <a class="nav-link active" href="../PRODUITS/index_produits.php">Produits
+        <a class="nav-link" href="../PRODUITS/index_produits.php">Produits
+            </a>
+        </li>
+
+        <li class="nav-item">
+        <a class="nav-link" href="../CLIENTS/index_clients.php">Clients
             </a>
         </li>
         

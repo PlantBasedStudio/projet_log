@@ -22,3 +22,4 @@ Ce projet qui utilise bootstrap et PHP est fait dans le but d'obtenir un site br
 - Ajouter des commentaires à un article
 - ajouter une note avec le commentaire
 - Enorme debug + refactoring
+- Verifier un utilisateur via email en générant un token à valider

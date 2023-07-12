@@ -12,6 +12,13 @@ require './PHP/CRUD/config.php';
 </head>
 <body>
     <?php include './PHP/INCLUDES/menu.php'; ?>
+    <div class="container">
+        <button class="btn btn-primary m-3">Trier par prix croissant</button>
+        <button class="btn btn-primary m-3">Trier par disponibilité</button>
+        <button class="btn btn-primary m-3">Trier par prix décroissant</button>
+        <button class="btn btn-primary m-3">Trier de A-Z</button>
+        <button class="btn btn-primary m-3">Trier de Z-A</button>
+    </div>
     <?php
                         $sql = "SELECT * FROM products";
 
@@ -20,8 +27,8 @@ require './PHP/CRUD/config.php';
                                 echo '<div class="container mt-4 mb-5">';
                                     echo '<div class="row">';
                                         while ($row = mysqli_fetch_array($result)){
-                                        
-                                            echo '<div class="col-md-2">';
+                                            
+                                            echo '<div class="col-md-2 article">';
                                                 echo '<div class="card mb-2 box-shadow border produit">';
                                                     echo '<div class="container  produit g-0">';
                                                         echo '<img class ="card-img-top centerImg" src="./ADMIN/PRODUITS/'.$row['thumbnail'].'" alt="image">';
@@ -29,7 +36,7 @@ require './PHP/CRUD/config.php';
                                                             echo '<h5>'. $row['designation'] . '</h5>';
                                                             echo '<p>'. $row['ref'] . '</p>';
                                                             echo '<h6>'. $row['category'] . '</h6>';
-                                                            echo '<p>'. $row['pu_ht'] * $row['tva'] . ' €</p>';
+                                                            echo '<p class="prix">'. $row['pu_ht'] * $row['tva'] . ' €</p>';
                                             
                                                             echo '<p class="description">'. $row['description'] . '</p>';
                                             
@@ -44,7 +51,8 @@ require './PHP/CRUD/config.php';
                                                     echo '</div>';
                                                 echo '</div>';
                                             echo '</div>';
-                                    }
+                                        }
+                                        
                                     echo '</div>';
                                 echo '</div>';
                                 

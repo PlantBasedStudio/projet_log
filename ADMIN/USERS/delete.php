@@ -1,4 +1,5 @@
 <?php
+session_start();
 require '../../PHP/CRUD/config.php';
 
 if(isset($_SESSION['roles'])){
@@ -67,7 +68,7 @@ if(isset($_POST['id']) && $_POST['id'] != null && !empty($_POST['id'])){
                     <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post">
                         <div class="alert alert-danger">
                             <input type="hidden" name="id" value="<?php echo trim($_GET["id"]); ?>"/>
-                            <p>Etes vous sûre de vouloir supprimer cette utilisateur ?</p>
+                            <p>Etes vous sûr de vouloir supprimer cet utilisateur ?</p>
                             <p>
                                 <input type="submit" value="Yes" class="btn btn-danger">
                                 <a href="./index_admin.php" class="btn btn-secondary">No</a>
