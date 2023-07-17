@@ -4,7 +4,7 @@
 $host="localhost";
 $user ="root";
 $pass="";
-$db="testbdd";
+$db="mvc";
 
 $conn = mysqli_connect($host, $user, $pass, $db);
 
