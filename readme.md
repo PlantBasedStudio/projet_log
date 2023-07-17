@@ -25,4 +25,5 @@ Je vous invite à commencer par le fichier index.php pour comprendre le projet. 
 - ajouter une note avec le commentaire
 - Enorme debug + refactoring
 - Verifier un utilisateur via email en générant un token à valider.
+- Ajouter un client en Admin
 - 

@@ -6,6 +6,7 @@ if (isset($_SESSION['erreur'])){
 } else {
     $erreur ="";
 }
+$nav = 'login';
 ?>
 <!DOCTYPE html>
 <html lang="en">

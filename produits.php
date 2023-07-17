@@ -1,6 +1,7 @@
 <?php
 session_start();
 require './PHP/CRUD/config.php';
+$nav = 'produits';
 ?>
 <!DOCTYPE html>
 <html lang="en">

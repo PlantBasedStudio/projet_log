@@ -1,10 +1,10 @@
 <?php
 
 if(isset($_SESSION['login']) && $_SESSION['login'] != null){
-  $username = '<a class="nav-link" href="./deconnexion.php">bonjour ' . $_SESSION['login'] . ' Cliquez ici pour vous déco</a>';
+  $username = '<a class="nav-link" href="./deconnexion.php"> Déconnexion</a>';
   $profil = '<a class="nav-link" href="./profil.php">Profil</a>';
 } else {
-  $username = '<a class="nav-link" href="./login.php">Connexion</a>';
+  $username = '<a  class="nav-link" href="./login.php">Connexion</a>';
   $profil = '<a class="nav-link" href="./login.php">Profil</a>';
 }   
 
@@ -38,14 +38,14 @@ if (isset($_SESSION['erreur'])){
 <body>
 <nav class="navbar navbar-expand-lg bg-primary" data-bs-theme="dark">
   <div class="container-fluid">
-    <a class="navbar-brand" href="./index.php">Navbar</a>
+    <a class="navbar-brand" href="./index.php">Projet_Log</a>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarColor01" aria-controls="navbarColor01" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
     <div class="collapse navbar-collapse" id="navbarColor01">
       <ul class="navbar-nav me-auto">
         <li class="nav-item">
-          <a class="nav-link active" href="./index.php">Accueil
+          <a class="nav-link <?php if ($nav === 'index'): ?> active<?php endif ?>" href="./index.php">Accueil
           </a>
         </li>
         <li class="nav-item">
@@ -54,19 +54,23 @@ if (isset($_SESSION['erreur'])){
         <?php if (!isset($_SESSION['login']) || $_SESSION['login'] == null ) : ?>
           <?php $_SESSION = ""; ?>
           <li class="nav-item">
-          <a class="nav-link" href="./inscription.php">Inscription</a>
+          <a class="nav-link <?php if ($nav === 'inscription'): ?> active<?php endif ?>" href="./inscription.php">Inscription</a>
         </li>
         <?php endif ; ?>
         <?php if (isset($role) && $role == 'admin' && $_SESSION['login'] != null) : ?>
           <li class="nav-item">
-          <a class="nav-link" href="./ADMIN/USERS/index_admin.php">admin</a>
+          <a class="nav-link <?php if ($nav === 'admin'): ?> active<?php endif ?>" href="./ADMIN/USERS/index_admin.php">admin</a>
         </li>
         <?php endif ; ?>
         <li class="nav-item">
           <?php echo $username  ?>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="./produits.php">Produits
+          <a class="nav-link <?php if ($nav === 'produits'): ?> active<?php endif ?>" href="./produits.php">Produits
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link <?php if ($nav === 'contact'): ?> active<?php endif ?>" href="./contact.php">Contact
           </a>
         </li>
         

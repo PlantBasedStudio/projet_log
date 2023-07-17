@@ -1,18 +1,18 @@
 <?php
 session_start(); // Indispensable à chaque nouvelle page qui va avoir besoin du chargement de la session actuelle (notamment pour garder la connexion de l'utilisateur).
+$nav = 'index';
 ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- Ajouter ici les links css indispensables pour le thème du site -->
     <title>Page d'accueil</title>
 </head>
 <body>
-    <?php include './PHP/INCLUDES/menu.php'; ?>
-
-    <div class="px-4 py-5 my-5 text-center"> //? section hero qui présente le projet
+    <?php require './PHP/INCLUDES/menu.php'; ?>
+    <!-- section hero qui présente le projet -->
+    <main class="px-4 py-5 my-5 text-center"> 
         <h5>Bienvenue sur mon site incroyable</h5>
         <img class="d-block mx-auto mb-4" src="./ADMIN/PRODUITS/Thumbnails/img.png" alt="presentation" >
         <h1 class="display-5 fw-bold text-body-emphasis">Projet Log</h1>
@@ -23,7 +23,7 @@ session_start(); // Indispensable à chaque nouvelle page qui va avoir besoin du
                 <a href="./inscription.php"><button type="button" class="btn btn-outline-secondary btn-lg px-4">S'inscrire</button></a>
             </div>
         </div>
-    </div>
+    </main>
     
     <?php include './PHP/INCLUDES/footer.php'; ?>
 </body>
