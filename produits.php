@@ -1,6 +1,7 @@
 <?php
 session_start();
 require './PHP/CRUD/config.php';
+
 $nav = 'produits';
 ?>
 <!DOCTYPE html>
@@ -22,7 +23,6 @@ $nav = 'produits';
     </div>
     <?php
                         $sql = "SELECT * FROM products";
-
                         if($result = mysqli_query($conn, $sql)){
                             if(mysqli_num_rows($result)>0){
                                 echo '<div class="container mt-4 mb-5">';

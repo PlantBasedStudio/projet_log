@@ -75,6 +75,15 @@ if (mysqli_query($conn, $sql)){
     echo "Erreur de création" . mysqli_error($conn);
 }
 
+
+$token = "token users";
+$sql = "ALTER TABLE users ADD COLUMN token_reset VARCHAR(255) NULL";
+if(mysqli_query($conn, $sql)){
+    echo "colomne: " . $token . " est créée";
+} else {
+    echo "Erreur de création" . mysqli_error($conn);
+}
+
 $conn -> close();
 
 ?>

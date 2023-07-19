@@ -32,6 +32,7 @@ $nav = 'login';
         <label for="password"> Password
             <input type="password" name="mdp" id="mdp" placeholder="mot de passe">
         </label>
+        <h5><a href="./reset_password.php">Mot de passe oublié ?</a></h5>
         <div class="align">
             <input class="btnSubmit" type="submit" value="Connexion">
             <a href="./inscription.php"><input type="button" value="Inscription"></a>

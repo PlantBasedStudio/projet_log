@@ -48,6 +48,19 @@ if($stmt = mysqli_prepare($conn, $sql)){
     $param_prenom = $prenom;
     $param_mail = $mail;
     $param_message = $message;
+
+    mail( "adressemail@email.com",
+    "nouveau message sur le site",
+    $nom . " " . $prenom . " " . $mail . " : vous à écrit : " . $message,
+    "From:" . $email,
+    "To: adressemail@email.com");
+
+    mail($mail,
+    "Votre message sur le site : projet_log",
+    "Vous avez écrit : " . $message,
+    "From: adressemail@email.com",
+    "To:" . $mail);
+    
     if(mysqli_stmt_execute($stmt)){
         $_SESSION['erreurContact'] = 'Parfait chef';
         header('Location: ./contact.php');
@@ -59,7 +72,7 @@ if($stmt = mysqli_prepare($conn, $sql)){
     }
 }
 
-mail( "adressemail@email.com", "nouveau message sur le site", $nom . " " . $prenom . " " . $mail . " : vous à écrit : " . $message, "From:" . $email, "To: adressemail@email.com");
+
 
 
 
